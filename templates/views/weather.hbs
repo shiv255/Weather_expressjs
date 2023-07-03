@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  {{>headerLinks}}
+      <title>Weather</title>
+  </head>
+  <body>
+    {{>navbar}}
+ <!-- main header -->
+    <div class="container-fluid main_header">
+      <div class="row">
+        <div class="col-md-10 col-12 mx-auto">
+
+          <div class="main_content">
+            <form class="temp_form">
+                <input type="text" id="cityName" placeholder="Enter your City Name" autocomplete="off">
+                <input type="submit" value="search" id="submitBtn">
+            </form>
+          </div>
+
+          <div class="tempInformation">
+            <div class="top_layer">
+                <p id="day">tuesday</p>
+                <p id="today_data">02 JULY</p>
+            </div>
+            <div class="main_layer">
+                <p id="city_name">Get output here</p>
+                <div class="middle_layer data_hide">
+                    <p id="temp"> <span>0</span> <sup>o</sup>C</p>
+                    <p id="temp_status"> <i class="fa-solid fa-cloud" aria-hidden="true"></i> </p>
+                </div>
+            </div>
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- footer -->
+   {{>footer}}
+   <script src="js/main.js"></script>
+   <script>
+    const getCurrentDay = () => {
+        const weekday = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+
+        const d = new Date();
+        let days = weekday[d.getDay()];
+        const day = document.getElementById('day');
+        day.innerText = days;
+      };
+      getCurrentDay();
+
+      const getCurrentTime = () => {
+        const month = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+        const today_data = document.getElementById('today_data')
+        var currentTime = new Date();
+        var curmonth = month[currentTime.getMonth() + 1];
+        var date = currentTime.getDate();
+        var year = currentTime.getFullYear();
+
+        today_data.innerText = `${curmonth} ${date},${year}`
+      };
+
+      getCurrentTime()
+   </script>
+
+    <!-- footer links-->
+  {{>footerlinks}}
+  </body>
+</html>

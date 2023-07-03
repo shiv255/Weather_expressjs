@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{>headerLinks}}
+        <title>About</title>
+  </head>
+  <body>
+   {{>navbar}}
+    <!-- main header -->
+    <div class="container-fluid main_header">
+      <div class="row">
+        <div class="col-md-10 col-12 mx-auto">
+          <div class="row">
+            <!-- left side div -->
+            <div class="col-md-6 col-12 main_header_right align-items-center">
+              <figure>
+                <img
+                  src="img/Shiv.jpeg"
+                  alt="Shivam"
+                  clss="img-fluid"
+                  title="Shivam Agarwal"
+                />
+              </figure>
+            </div>
+            <div class="col-md-6 col-12 main_header_left">
+              <p>Welcome to the Weather app</p>
+              <h1>
+                I am A <span class="text_clr">Developer</span> & currently
+                Pursuing my B.Tech From VNIT,Nagpur.
+              </h1>
+            </div>
+            <!-- right side div -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+  {{>footer}}
+
+   <!-- footer links-->
+  {{>footerlinks}}
+  </body>
+</html>
